@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -15,7 +15,7 @@ var _date = require("../utils/date");
 
 var _elements = require("../elements");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -148,16 +148,16 @@ var defaultProps = function defaultProps(props) {
 };
 
 var DigitNumpad = function DigitNumpad(props) {
-  return _react.default.createElement(_NumPad.default, _extends({}, props, {
+  return _react["default"].createElement(_NumPad["default"], _extends({}, props, {
     customInput: props.children
-  }), _react.default.createElement(_elements.KeyPad, defaultProps(props)));
+  }), _react["default"].createElement(_elements.KeyPad, defaultProps(props)));
 };
 
 DigitNumpad.propsType = {
-  gameType: _propTypes.default.number
+  gameType: _propTypes["default"].number
 };
 DigitNumpad.defaultProps = {
   gameType: 0
 };
 var _default = DigitNumpad;
-exports.default = _default;
+exports["default"] = _default;

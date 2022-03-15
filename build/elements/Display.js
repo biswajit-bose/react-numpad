@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -13,7 +13,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _backspace = _interopRequireDefault(require("react-icons/lib/md/backspace"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject4() {
   var data = _taggedTemplateLiteral(["\n  flex-grow: 1;\n  padding: 4px;\n  display:none;\n"]);
@@ -57,22 +57,22 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Wrapper = _styledComponents.default.div(_templateObject());
+var Wrapper = _styledComponents["default"].div(_templateObject());
 
-var Backspace = _styledComponents.default.button(_templateObject2(), function (props) {
+var Backspace = _styledComponents["default"].button(_templateObject2(), function (props) {
   return props.theme.header.primaryColor;
 });
 
-var Input = _styledComponents.default.input(_templateObject3());
+var Input = _styledComponents["default"].input(_templateObject3());
 
-var Display = _styledComponents.default.div(_templateObject4());
+var Display = _styledComponents["default"].div(_templateObject4());
 
 var DisplayWrapper = function DisplayWrapper(_ref) {
   var value = _ref.value,
       displayRule = _ref.displayRule,
       dateFormat = _ref.dateFormat,
       cancel = _ref.cancel;
-  return _react.default.createElement(Wrapper, null, _react.default.createElement(Display, null, _react.default.createElement(Input, {
+  return _react["default"].createElement(Wrapper, null, _react["default"].createElement(Display, null, _react["default"].createElement(Input, {
     value: displayRule(value, dateFormat),
     readOnly: true,
     autoFocus: true
@@ -80,14 +80,14 @@ var DisplayWrapper = function DisplayWrapper(_ref) {
 };
 
 DisplayWrapper.propTypes = {
-  value: _propTypes.default.string.isRequired,
-  displayRule: _propTypes.default.func.isRequired,
-  dateFormat: _propTypes.default.string,
-  cancel: _propTypes.default.func
+  value: _propTypes["default"].string.isRequired,
+  displayRule: _propTypes["default"].func.isRequired,
+  dateFormat: _propTypes["default"].string,
+  cancel: _propTypes["default"].func
 };
 DisplayWrapper.defaultProps = {
   dateFormat: 'MM/DD/YYYY',
   cancel: function cancel() {}
 };
 var _default = DisplayWrapper;
-exports.default = _default;
+exports["default"] = _default;

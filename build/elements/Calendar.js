@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -25,9 +25,9 @@ var _CalendarUI = require("./CalendarUI");
 
 var _TimeView = _interopRequireDefault(require("./TimeView"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -69,7 +69,7 @@ function (_Component) {
       }
     }
 
-    _this.currentDate = props.value ? (0, _moment.default)(props.value, props.dateFormat).startOf('day') : (0, _moment.default)().startOf('day');
+    _this.currentDate = props.value ? (0, _moment["default"])(props.value, props.dateFormat).startOf('day') : (0, _moment["default"])().startOf('day');
     _this.state = {
       date: _this.currentDate.clone().startOf('day'),
       calendarMonth: _this.currentDate.clone().startOf('month'),
@@ -220,10 +220,10 @@ function (_Component) {
           date = _this$state.date,
           calendarMonth = _this$state.calendarMonth,
           calendarView = _this$state.calendarView;
-      return _react.default.createElement(_reactSwipeable.default, {
+      return _react["default"].createElement(_reactSwipeable["default"], {
         onSwipedLeft: this.swipingLeft,
         onSwipedRight: this.swipingRight
-      }, _react.default.createElement(_CalendarUI.Container, null, _react.default.createElement(_CalendarUI.Content, null, calendarView === _CalendarUI.VIEWS.DAY_VIEW && _react.default.createElement(_CalendarDayView.default, {
+      }, _react["default"].createElement(_CalendarUI.Container, null, _react["default"].createElement(_CalendarUI.Content, null, calendarView === _CalendarUI.VIEWS.DAY_VIEW && _react["default"].createElement(_CalendarDayView["default"], {
         handlePrevMonth: this.handlePrevMonth,
         handleNextMonth: this.handleNextMonth,
         handlePrevYear: this.handlePrevYear,
@@ -239,15 +239,15 @@ function (_Component) {
         max: max,
         dateFormat: dateFormat,
         markers: markers
-      }), calendarView === _CalendarUI.VIEWS.TIME_VIEW && _react.default.createElement(_TimeView.default, {
+      }), calendarView === _CalendarUI.VIEWS.TIME_VIEW && _react["default"].createElement(_TimeView["default"], {
         locale: locale,
         onChange: this.onTime,
         date: date.format(),
         handleBackTime: this.handleBackTime
-      }), calendarView === _CalendarUI.VIEWS.MONTH_VIEW && _react.default.createElement(_CalendarMonthView.default, {
+      }), calendarView === _CalendarUI.VIEWS.MONTH_VIEW && _react["default"].createElement(_CalendarMonthView["default"], {
         locale: locale,
         handleChangeMonth: this.handleChangeMonth
-      }), calendarView === _CalendarUI.VIEWS.YEAR_VIEW && _react.default.createElement(_CalendarYearView.default, {
+      }), calendarView === _CalendarUI.VIEWS.YEAR_VIEW && _react["default"].createElement(_CalendarYearView["default"], {
         handleChangeYear: this.handleChangeYear,
         date: date
       }))));
@@ -258,17 +258,17 @@ function (_Component) {
 }(_react.Component);
 
 Calendar.propTypes = {
-  confirm: _propTypes.default.func.isRequired,
-  cancel: _propTypes.default.func.isRequired,
-  weekOffset: _propTypes.default.number,
-  value: _propTypes.default.string,
-  dateFormat: _propTypes.default.string,
-  timeFormat: _propTypes.default.string,
-  locale: _propTypes.default.string.isRequired,
-  keyValid: _propTypes.default.func.isRequired,
-  min: _propTypes.default.string,
-  max: _propTypes.default.string,
-  markers: _propTypes.default.arrayOf(_propTypes.default.string).isRequired
+  confirm: _propTypes["default"].func.isRequired,
+  cancel: _propTypes["default"].func.isRequired,
+  weekOffset: _propTypes["default"].number,
+  value: _propTypes["default"].string,
+  dateFormat: _propTypes["default"].string,
+  timeFormat: _propTypes["default"].string,
+  locale: _propTypes["default"].string.isRequired,
+  keyValid: _propTypes["default"].func.isRequired,
+  min: _propTypes["default"].string,
+  max: _propTypes["default"].string,
+  markers: _propTypes["default"].arrayOf(_propTypes["default"].string).isRequired
 };
 Calendar.defaultProps = {
   weekOffset: 0,
@@ -279,6 +279,6 @@ Calendar.defaultProps = {
   max: undefined
 };
 
-var _default = (0, _reactOnclickoutside.default)(Calendar);
+var _default = (0, _reactOnclickoutside["default"])(Calendar);
 
-exports.default = _default;
+exports["default"] = _default;

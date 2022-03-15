@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -33,9 +33,9 @@ var _ui = _interopRequireDefault(require("./ui"));
 
 var _mediaTemplates = require("../styles/media-templates");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -127,25 +127,25 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var AppointmentHeader = (0, _styledComponents.default)(_CalendarUI.Header)(_templateObject());
+var AppointmentHeader = (0, _styledComponents["default"])(_CalendarUI.Header)(_templateObject());
 
-var HeaderMonth = _styledComponents.default.div(_templateObject2(), function (props) {
+var HeaderMonth = _styledComponents["default"].div(_templateObject2(), function (props) {
   return props.widthHeader;
 }, function (props) {
   return props.theme.header.backgroundColor;
 });
 
-var Days = _styledComponents.default.div(_templateObject3());
+var Days = _styledComponents["default"].div(_templateObject3());
 
-var DayTimes = _styledComponents.default.div(_templateObject4(), function (props) {
+var DayTimes = _styledComponents["default"].div(_templateObject4(), function (props) {
   return props.separator ? "border-left: 2px solid ".concat(props.theme.header.backgroundColor) : '';
 });
 
-var Day = _styledComponents.default.div(_templateObject5());
+var Day = _styledComponents["default"].div(_templateObject5());
 
-var Times = _styledComponents.default.div(_templateObject6());
+var Times = _styledComponents["default"].div(_templateObject6());
 
-var Time = _styledComponents.default.div(_templateObject7(), function (props) {
+var Time = _styledComponents["default"].div(_templateObject7(), function (props) {
   return "color: ".concat(props.theme.body.highlightColor, "; border-color: ").concat(props.theme.body.highlightColor);
 });
 
@@ -164,7 +164,7 @@ function (_Component) {
       dayRange: (0, _mediaTemplates.isMobile)() ? 4 : 7,
       index: 0,
       orderedDates: Object.keys(props.dates).sort(function (a, b) {
-        return (0, _moment.default)(a, props.dateFormat) - (0, _moment.default)(b, props.dateFormat);
+        return (0, _moment["default"])(a, props.dateFormat) - (0, _moment["default"])(b, props.dateFormat);
       })
     }; // Moment.js hack to load locales when needed
 
@@ -203,7 +203,7 @@ function (_Component) {
         var dateFormat = nextProps.dateFormat;
         this.setState({
           orderedDates: Object.keys(nextProps.dates).sort(function (a, b) {
-            return (0, _moment.default)(a, dateFormat) - (0, _moment.default)(b, dateFormat);
+            return (0, _moment["default"])(a, dateFormat) - (0, _moment["default"])(b, dateFormat);
           })
         });
       }
@@ -280,10 +280,10 @@ function (_Component) {
           dayRange = _this$state2.dayRange,
           index = _this$state2.index,
           orderedDates = _this$state2.orderedDates;
-      var chunkDates = (0, _chunk.default)(orderedDates, dayRange);
+      var chunkDates = (0, _chunk["default"])(orderedDates, dayRange);
       var headerMonths = {};
       chunkDates[index].forEach(function (date) {
-        var month = (0, _moment.default)(date, dateFormat).format('MMMM');
+        var month = (0, _moment["default"])(date, dateFormat).format('MMMM');
 
         if (month in headerMonths) {
           headerMonths[month] += 1;
@@ -292,50 +292,50 @@ function (_Component) {
         }
       });
       var isOdd;
-      return _react.default.createElement(_reactSwipeable.default, {
+      return _react["default"].createElement(_reactSwipeable["default"], {
         onSwipedLeft: this.swipingLeft,
         onSwipedRight: this.swipingRight
-      }, _react.default.createElement(_CalendarUI.Container, null, _react.default.createElement(_AppointmentUI.default, null, _react.default.createElement(AppointmentHeader, null, _react.default.createElement(_ui.default, {
+      }, _react["default"].createElement(_CalendarUI.Container, null, _react["default"].createElement(_AppointmentUI["default"], null, _react["default"].createElement(AppointmentHeader, null, _react["default"].createElement(_ui["default"], {
         onClick: this.handlePrevDays,
         disabled: index === 0
-      }, _react.default.createElement(_chevronLeft.default, null)), _react.default.createElement(_ui.default, {
+      }, _react["default"].createElement(_chevronLeft["default"], null)), _react["default"].createElement(_ui["default"], {
         onClick: cancel,
         style: {
           fontSize: '1em'
         }
-      }, _react.default.createElement(_cancel.default, null)), _react.default.createElement(_ui.default, {
+      }, _react["default"].createElement(_cancel["default"], null)), _react["default"].createElement(_ui["default"], {
         onClick: this.handleNextDays,
         disabled: !chunkDates[index + 1]
-      }, _react.default.createElement(_chevronRight.default, null))), _react.default.createElement("div", {
+      }, _react["default"].createElement(_chevronRight["default"], null))), _react["default"].createElement("div", {
         style: {
           display: 'flex'
         }
       }, Object.keys(headerMonths).map(function (month) {
-        return _react.default.createElement(HeaderMonth, {
+        return _react["default"].createElement(HeaderMonth, {
           key: month,
           widthHeader: headerMonths[month]
         }, month);
-      })), _react.default.createElement(Days, null, chunkDates[index].map(function (day, nDay) {
+      })), _react["default"].createElement(Days, null, chunkDates[index].map(function (day, nDay) {
         var separator = false;
 
         if (!nDay) {
-          isOdd = (0, _moment.default)(day, dateFormat).format('MM') % 2;
-        } else if (isOdd !== (0, _moment.default)(day, dateFormat).format('MM') % 2) {
+          isOdd = (0, _moment["default"])(day, dateFormat).format('MM') % 2;
+        } else if (isOdd !== (0, _moment["default"])(day, dateFormat).format('MM') % 2) {
           separator = true;
-          isOdd = (0, _moment.default)(day, dateFormat).format('MM') % 2;
+          isOdd = (0, _moment["default"])(day, dateFormat).format('MM') % 2;
         }
 
-        return _react.default.createElement(DayTimes, {
+        return _react["default"].createElement(DayTimes, {
           key: "appointment-day-".concat(day),
           separator: separator
-        }, _react.default.createElement(Day, {
-          isOdd: (0, _moment.default)(day, dateFormat).format('MM') % 2
-        }, _react.default.createElement("div", {
+        }, _react["default"].createElement(Day, {
+          isOdd: (0, _moment["default"])(day, dateFormat).format('MM') % 2
+        }, _react["default"].createElement("div", {
           className: "number"
-        }, (0, _moment.default)(day, dateFormat).format('DD')), _react.default.createElement("div", {
+        }, (0, _moment["default"])(day, dateFormat).format('DD')), _react["default"].createElement("div", {
           className: "name"
-        }, (0, _moment.default)(day, dateFormat).format('ddd'))), _react.default.createElement(Times, null, dates[day].map(function (time) {
-          return _react.default.createElement(Time, {
+        }, (0, _moment["default"])(day, dateFormat).format('ddd'))), _react["default"].createElement(Times, null, dates[day].map(function (time) {
+          return _react["default"].createElement(Time, {
             onClick: function onClick() {
               confirm("".concat(day, " ").concat(time));
             },
@@ -350,16 +350,16 @@ function (_Component) {
 }(_react.Component);
 
 Appointment.propTypes = {
-  confirm: _propTypes.default.func.isRequired,
-  cancel: _propTypes.default.func.isRequired,
-  dateFormat: _propTypes.default.string,
-  locale: _propTypes.default.string.isRequired,
-  dates: _propTypes.default.objectOf(_propTypes.default.array).isRequired
+  confirm: _propTypes["default"].func.isRequired,
+  cancel: _propTypes["default"].func.isRequired,
+  dateFormat: _propTypes["default"].string,
+  locale: _propTypes["default"].string.isRequired,
+  dates: _propTypes["default"].objectOf(_propTypes["default"].array).isRequired
 };
 Appointment.defaultProps = {
   dateFormat: 'MM/DD/YYYY'
 };
 
-var _default = (0, _reactOnclickoutside.default)(Appointment);
+var _default = (0, _reactOnclickoutside["default"])(Appointment);
 
-exports.default = _default;
+exports["default"] = _default;

@@ -9,7 +9,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _color = _interopRequireDefault(require("color"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject2() {
   var data = _taggedTemplateLiteral(["\nposition: fixed;\n  color: ", ";\n  &:hover {\n    color: ", ";\n  }\n  cursor: pointer;\n  border: none;\n  background: transparent;\n  font-size: 1.6em;\n  padding: 0px 0px 2px 0px;\n  :active,\n  :focus {\n    outline: none;\n  }\n  :disabled {\n    pointer-events: none;\n    cursor: now-allowed;\n    color: ", ";\n  }\n"]);
@@ -33,17 +33,18 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var SbmtButton = _styledComponents.default.button(_templateObject(), function (props) {
+var SbmtButton = _styledComponents["default"].button(_templateObject(), function (props) {
   return props.theme.header.secondaryColor;
 });
 
 exports.SbmtButton = SbmtButton;
 
-var NButton = _styledComponents.default.button(_templateObject2(), function (props) {
+var NButton = _styledComponents["default"].button(_templateObject2(), function (props) {
   return props.theme.header.secondaryColor;
 }, function (props) {
   return props.theme.header.highlightColor;
 }, function (props) {
+  //return (0, _color["default"])(props.theme.header.secondaryColor).darken(0.4).string();
   return props.theme.header.secondaryColor;
 });
 

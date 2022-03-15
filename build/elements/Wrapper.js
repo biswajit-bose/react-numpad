@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -15,7 +15,7 @@ var _color = _interopRequireDefault(require("color"));
 
 var _mediaTemplates = require("../styles/media-templates");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject8() {
   var data = _taggedTemplateLiteral(["width: 100wv;"]);
@@ -99,16 +99,16 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var BackgroundPanel = _styledComponents.default.div(_templateObject(), function (props) {
+var BackgroundPanel = _styledComponents["default"].div(_templateObject(), function (props) {
   return props.theme.coords ? "" : "\n  position: fixed;\n  padding: 0;\n  margin: 0;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 10000;\n";
 });
 
-var Container = _styledComponents.default.div(_templateObject2(), function (props) {
+var Container = _styledComponents["default"].div(_templateObject2(), function (props) {
   return props.theme.position;
 });
 
-var Content = _styledComponents.default.div(_templateObject3(), function (props) {
-  return props.theme.coords ? "\n    position: absolute;\n    top: ".concat(props.theme.coords.top, ";    \n    bottom: ").concat(props.theme.coords.bottom, ";    \n    height: 40vh;\n    ") : "\n    display: flex;    \n    width: 100%;\n    justify-content: center;\n    align-items: ".concat(props.theme.position, ";\n    height: ").concat(props.theme.position === 'center' ? '100vh' : '40vh', ";\n    background-color: #000");
+var Content = _styledComponents["default"].div(_templateObject3(), function (props) {
+  return props.theme.coords ? "\n    position: absolute;\n    top: ".concat(props.theme.coords.top, ";    \n    bottom: ").concat(props.theme.coords.bottom, ";    \n    height: 40vh;\n    ") : "\n    display: flex;    \n    width: 100%;\n    justify-content: center;\n    align-items: ".concat(props.theme.position, ";\n    height: ").concat(props.theme.position === 'center' ? '100vh' : '40vh', ";\n    background-color:#000 ");
 }, _mediaTemplates.media.desktop(_templateObject4(), function (props) {
   return props.theme.coords ? props.theme.coords.left : 0;
 }), _mediaTemplates.media.desktop(_templateObject5(), function (props) {
@@ -117,12 +117,12 @@ var Content = _styledComponents.default.div(_templateObject3(), function (props)
 
 var Wrapper = function Wrapper(_ref) {
   var children = _ref.children;
-  return _react.default.createElement(BackgroundPanel, null, _react.default.createElement(Container, null, _react.default.createElement(Content, null, children)));
+  return _react["default"].createElement(BackgroundPanel, null, _react["default"].createElement(Container, null, _react["default"].createElement(Content, null, children)));
 };
 
 Wrapper.displayName = 'Wrapper';
 Wrapper.propTypes = {
-  children: _propTypes.default.oneOfType([_propTypes.default.object, _propTypes.default.array]).isRequired
+  children: _propTypes["default"].oneOfType([_propTypes["default"].object, _propTypes["default"].array]).isRequired
 };
 var _default = Wrapper;
-exports.default = _default;
+exports["default"] = _default;

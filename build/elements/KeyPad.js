@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -13,9 +13,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _reactOnclickoutside = _interopRequireDefault(require("react-onclickoutside"));
 
-var _check = _interopRequireDefault(require("react-icons/lib/md/check"));
-
-var _checkCircle = _interopRequireDefault(require("react-icons/lib/md/check-circle"));
+var _deleteSweep = _interopRequireDefault(require("react-icons/lib/md/delete-sweep"));
 
 var _close = _interopRequireDefault(require("react-icons/lib/md/close"));
 
@@ -29,9 +27,9 @@ var _ui = require("./ui");
 
 var _backspace = _interopRequireDefault(require("react-icons/lib/md/backspace"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -121,23 +119,23 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Backspace = _styledComponents.default.button(_templateObject(), function (props) {
+var Backspace = _styledComponents["default"].button(_templateObject(), function (props) {
   return props.theme.header.primaryColor;
 });
 
-var Content = _styledComponents.default.div(_templateObject2(), _mediaTemplates.media.mobile(_templateObject3()), function (props) {
+var Content = _styledComponents["default"].div(_templateObject2(), _mediaTemplates.media.mobile(_templateObject3()), function (props) {
   return props.theme.body.backgroundColor;
 });
 
-var Label = _styledComponents.default.div(_templateObject4());
+var Label = _styledComponents["default"].div(_templateObject4());
 
-var Header = _styledComponents.default.div(_templateObject5(), function (props) {
+var Header = _styledComponents["default"].div(_templateObject5(), function (props) {
   return props.theme.header.secondaryColor;
 }, function (props) {
   return props.theme.header.backgroundColor;
 });
 
-var Keys = _styledComponents.default.div(_templateObject6());
+var Keys = _styledComponents["default"].div(_templateObject6());
 
 var KeyPad =
 /*#__PURE__*/
@@ -156,6 +154,7 @@ function (_Component) {
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     _this.keyDown = _this.keyDown.bind(_assertThisInitialized(_this));
     _this.cancelLastInsert = _this.cancelLastInsert.bind(_assertThisInitialized(_this));
+    _this.cancelInsert = _this.cancelInsert.bind(_assertThisInitialized(_this));
     _this.numericKeys = _toConsumableArray(Array(10).keys());
     return _this;
   }
@@ -220,6 +219,22 @@ function (_Component) {
       }, 400);
     }
   }, {
+    key: "cancelInsert",
+    value: function cancelInsert() {
+      var _this3 = this;
+
+      this.setState(function (prevState) {
+        return {
+          input: ''
+        };
+      });
+      setTimeout(function () {
+        if (_this3.state.input == '') {
+          _this3.props.update();
+        }
+      }, 400);
+    }
+  }, {
     key: "keyDown",
     value: function keyDown(event) {
       event.preventDefault();
@@ -270,7 +285,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       var _this$props5 = this.props,
           displayRule = _this$props5.displayRule,
@@ -279,45 +294,51 @@ function (_Component) {
           confirm = _this$props5.confirm,
           update = _this$props5.update,
           saveClick = _this$props5.saveClick,
+          clearClick = _this$props5.clearClick,
           cancel = _this$props5.cancel,
           theme = _this$props5.theme,
           keyValid = _this$props5.keyValid,
           keyValidator = _this$props5.keyValidator,
           dateFormat = _this$props5.dateFormat;
       var input = this.state.input;
-      return _react.default.createElement(Content, null, _react.default.createElement(Header, null, _react.default.createElement(_ui.NButton, {
+      return _react["default"].createElement(Content, null, _react["default"].createElement(Header, null, _react["default"].createElement(_ui.NButton, {
         onClick: cancel
-      }, _react.default.createElement(_close.default, null)), _react.default.createElement(_ui.SbmtButton, {
+      }, _react["default"].createElement(_close["default"], null)), _react["default"].createElement(_ui.SbmtButton, {
         onClick: function onClick() {
           return saveClick();
         },
         disabled: !validation(input, dateFormat)
-      }, validation(input, dateFormat) ? 'Enter Guess' : 'Enter Valid Guess')), _react.default.createElement(_Display.default, {
+      }, validation(input, dateFormat) ? 'Enter Guess' : 'Enter Valid Guess'), _react["default"].createElement(_ui.NButton, {
+        className: "clearBtn",
+        onClick: function onClick() {
+          return _this4.cancelInsert();
+        }
+      }, _react["default"].createElement(_deleteSweep["default"], null))), _react["default"].createElement(_Display["default"], {
         value: input,
         displayRule: displayRule,
         dateFormat: dateFormat,
         cancel: this.cancelLastInsert
-      }), _react.default.createElement(Keys, null, [1, 2, 3, 'BCK', 4, 5, 6, ' ', 7, 8, 9, '.', ' ', 0, ' ', ' '].map(function (key, index) {
+      }), _react["default"].createElement(Keys, null, [1, 2, 3, 'BCK', 4, 5, 6, ' ', 7, 8, 9, '.', ' ', 0, ' ', ' '].map(function (key, index) {
         return (// eslint-disable-next-line no-nested-ternary
-          key !== undefined && String(key).trim() && key !== 'BCK' ? _react.default.createElement(_KeypadButton.default, {
+          key !== undefined && String(key).trim() && key !== 'BCK' ? _react["default"].createElement(_KeypadButton["default"], {
             key: "button-".concat(key),
             theme: theme,
             click: function click(clickedKey) {
-              return _this3.handleClick(clickedKey);
+              return _this4.handleClick(clickedKey);
             },
             value: key,
             disabled: !keyValid(input, key, keyValidator || dateFormat)
-          }) : key !== undefined && key !== 'BCK' ? _react.default.createElement(_KeypadButton.default // eslint-disable-next-line react/no-array-index-key
+          }) : key !== undefined && key !== 'BCK' ? _react["default"].createElement(_KeypadButton["default"] // eslint-disable-next-line react/no-array-index-key
           , {
             key: "button-disabled-".concat(index),
             theme: theme,
             click: function click() {},
             value: key || ' ',
             disabled: true
-          }) : _react.default.createElement(Backspace, {
+          }) : _react["default"].createElement(Backspace, {
             key: "bck_key",
-            onClick: _this3.cancelLastInsert
-          }, _react.default.createElement(_backspace.default, null))
+            onClick: _this4.cancelLastInsert
+          }, _react["default"].createElement(_backspace["default"], null))
         );
       })));
     }
@@ -328,20 +349,21 @@ function (_Component) {
 
 KeyPad.displayName = 'KeyPad';
 KeyPad.propTypes = {
-  label: _propTypes.default.string,
-  theme: _propTypes.default.object,
-  confirm: _propTypes.default.func.isRequired,
-  saveClick: _propTypes.default.func.isRequired,
-  update: _propTypes.default.func.isRequired,
-  cancel: _propTypes.default.func.isRequired,
-  displayRule: _propTypes.default.func.isRequired,
-  validation: _propTypes.default.func.isRequired,
-  keyValid: _propTypes.default.func.isRequired,
-  keyValidator: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.func]),
-  dateFormat: _propTypes.default.string,
-  value: _propTypes.default.oneOfType([_propTypes.default.number, _propTypes.default.string]),
-  sync: _propTypes.default.bool.isRequired,
-  formatInputValue: _propTypes.default.func.isRequired
+  label: _propTypes["default"].string,
+  theme: _propTypes["default"].object,
+  confirm: _propTypes["default"].func.isRequired,
+  saveClick: _propTypes["default"].func.isRequired,
+  clearClick: _propTypes["default"].func.isRequired,
+  update: _propTypes["default"].func.isRequired,
+  cancel: _propTypes["default"].func.isRequired,
+  displayRule: _propTypes["default"].func.isRequired,
+  validation: _propTypes["default"].func.isRequired,
+  keyValid: _propTypes["default"].func.isRequired,
+  keyValidator: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),
+  dateFormat: _propTypes["default"].string,
+  value: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string]),
+  sync: _propTypes["default"].bool.isRequired,
+  formatInputValue: _propTypes["default"].func.isRequired
 };
 KeyPad.defaultProps = {
   label: undefined,
@@ -351,6 +373,6 @@ KeyPad.defaultProps = {
   value: ''
 };
 
-var _default = (0, _reactOnclickoutside.default)(KeyPad);
+var _default = (0, _reactOnclickoutside["default"])(KeyPad);
 
-exports.default = _default;
+exports["default"] = _default;

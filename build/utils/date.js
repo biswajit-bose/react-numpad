@@ -7,7 +7,7 @@ exports.validate = exports.padding = exports.display = void 0;
 
 var _moment = _interopRequireDefault(require("moment"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var VALIDATION_DATE = '20201001010203';
 var VALIDATION_FORMAT = 'YYYYMMDDHHmmss';
@@ -31,7 +31,7 @@ exports.display = display;
 
 var padding = function padding(value, dateFormat) {
   var cleanedDateFormat = dateFormat.replace(/[^a-z]/gi, '');
-  var checkDate = (0, _moment.default)(VALIDATION_DATE, VALIDATION_FORMAT).format(cleanedDateFormat);
+  var checkDate = (0, _moment["default"])(VALIDATION_DATE, VALIDATION_FORMAT).format(cleanedDateFormat);
   return value + checkDate.substring(value.length, cleanedDateFormat.length);
 };
 
@@ -41,7 +41,7 @@ var validate = function validate(value) {
   var dateFormat = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
   var position = arguments.length > 2 ? arguments[2] : undefined;
   var cleanedDateFormat = dateFormat.replace(/[^a-z]/gi, '');
-  var nextDate = (0, _moment.default)(value, cleanedDateFormat);
+  var nextDate = (0, _moment["default"])(value, cleanedDateFormat);
 
   if (value.length !== cleanedDateFormat.length) {
     return false;
@@ -54,7 +54,7 @@ var validate = function validate(value) {
     return !!['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'].find(function (month) {
       valueParts[monthAt + 1] = month;
       var findValidDate = valueParts.join('');
-      return (0, _moment.default)(findValidDate, cleanedDateFormat).isValid();
+      return (0, _moment["default"])(findValidDate, cleanedDateFormat).isValid();
     });
   }
 

@@ -3,15 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -70,9 +70,9 @@ function (_Component) {
           disabled = _this$props.disabled,
           buttonContent = _this$props.buttonContent,
           customInput = _this$props.customInput;
-      return _react.default.createElement(_react.Fragment, null, label && _react.default.createElement("label", {
+      return _react["default"].createElement(_react.Fragment, null, label && _react["default"].createElement("label", {
         disabled: disabled
-      }, label), _react.default.createElement("span", {
+      }, label), _react["default"].createElement("span", {
         onClick: this.onShowKeyPad,
         onKeyPress: this.onShowKeyPad,
         role: "button",
@@ -80,8 +80,8 @@ function (_Component) {
         ref: function ref(wrapper) {
           _this2.inputWrapper = wrapper;
         }
-      }, customInput ? _react.default.Children.map(customInput, function (child) {
-        return _react.default.cloneElement(child, child.type === 'input' ? {
+      }, customInput ? _react["default"].Children.map(customInput, function (child) {
+        return _react["default"].cloneElement(child, child.type === 'input' ? {
           placeholder: placeholder,
           value: inputValue,
           disabled: disabled,
@@ -91,7 +91,7 @@ function (_Component) {
             _this2.input = input;
           }
         } : {});
-      }) : _react.default.createElement(_react.Fragment, null, _react.default.createElement("input", {
+      }) : _react["default"].createElement(_react.Fragment, null, _react["default"].createElement("input", {
         style: {
           outline: 'none'
         },
@@ -103,7 +103,7 @@ function (_Component) {
         disabled: disabled,
         tabIndex: -1,
         readOnly: true
-      }), buttonContent && _react.default.createElement("button", {
+      }), buttonContent && _react["default"].createElement("button", {
         type: "button",
         tabIndex: -1
       }, buttonContent))));
@@ -123,13 +123,13 @@ InputField.defaultProps = {
   customInput: undefined
 };
 InputField.propTypes = {
-  showKeyPad: _propTypes.default.func.isRequired,
-  inputValue: _propTypes.default.string,
-  placeholder: _propTypes.default.string,
-  label: _propTypes.default.string,
-  disabled: _propTypes.default.bool,
-  buttonContent: _propTypes.default.element,
-  customInput: _propTypes.default.oneOfType([_propTypes.default.object, _propTypes.default.arrayOf(_propTypes.default.element)])
+  showKeyPad: _propTypes["default"].func.isRequired,
+  inputValue: _propTypes["default"].string,
+  placeholder: _propTypes["default"].string,
+  label: _propTypes["default"].string,
+  disabled: _propTypes["default"].bool,
+  buttonContent: _propTypes["default"].element,
+  customInput: _propTypes["default"].oneOfType([_propTypes["default"].object, _propTypes["default"].arrayOf(_propTypes["default"].element)])
 };
 var _default = InputField;
-exports.default = _default;
+exports["default"] = _default;

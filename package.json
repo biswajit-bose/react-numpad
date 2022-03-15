@@ -115,7 +115,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gpietro/react-numpad.git"
+    "url": "git+https://github.com/biswajit-bose/react-numpad"
   },
   "scripts": {
     "build": "babel lib --ignore **/__tests__/*.js -d build",

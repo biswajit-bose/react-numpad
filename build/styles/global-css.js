@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _styledComponents = require("styled-components");
 
@@ -21,4 +21,4 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var GlobalStyle = (0, _styledComponents.createGlobalStyle)(_templateObject());
 var _default = GlobalStyle;
-exports.default = _default;
+exports["default"] = _default;

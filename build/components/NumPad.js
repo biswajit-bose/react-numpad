@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -23,9 +23,9 @@ var _globalCss = _interopRequireDefault(require("../styles/global-css"));
 
 var _styles = _interopRequireDefault(require("../styles"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -46,9 +46,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 var getTransition = function getTransition(show, position) {
-  var transition = _Slide.default;
+  var transition = _Slide["default"];
   var transitionProps = {
-    in: show,
+    "in": show,
     direction: 'up',
     mountOnEnter: true,
     unmountOnExit: true
@@ -96,7 +96,7 @@ var updateCoords = {
   }
 };
 
-var inputButtonContent = _react.default.createElement(_edit.default, null); // const inputButtonContent2 = <IconClock />;
+var inputButtonContent = _react["default"].createElement(_edit["default"], null); // const inputButtonContent2 = <IconClock />;
 // const inputButtonContent3 = <MdCalendar />;
 
 
@@ -203,7 +203,7 @@ function (_Component) {
           position = _this$props.position,
           sync = _this$props.sync,
           customInput = _this$props.customInput;
-      var customTheme = _typeof(theme) === 'object' ? theme : (0, _styles.default)(theme);
+      var customTheme = _typeof(theme) === 'object' ? theme : (0, _styles["default"])(theme);
       customTheme.position = position;
       customTheme.coords = inputCoords;
       var display = position !== 'flex-start' && position !== 'flex-end' ? show : true;
@@ -212,9 +212,9 @@ function (_Component) {
           transition = _getTransition.transition,
           transitionProps = _getTransition.transitionProps;
 
-      return _react.default.createElement(_react.Fragment, null, _react.default.createElement(_globalCss.default, null), _react.default.createElement(_styledComponents.ThemeProvider, {
+      return _react["default"].createElement(_react.Fragment, null, _react["default"].createElement(_globalCss["default"], null), _react["default"].createElement(_styledComponents.ThemeProvider, {
         theme: customTheme
-      }, _react.default.createElement(_elements.InputField, {
+      }, _react["default"].createElement(_elements.InputField, {
         placeholder: placeholder,
         showKeyPad: this.toggleKeyPad,
         inputValue: value,
@@ -222,11 +222,11 @@ function (_Component) {
         disabled: show,
         buttonContent: inputButtonContent,
         customInput: customInput
-      })), _react.default.createElement(_reactPortal.Portal, null, display && _react.default.createElement(transition, transitionProps, _react.default.createElement(_styledComponents.ThemeProvider, {
+      })), _react["default"].createElement(_reactPortal.Portal, null, display && _react["default"].createElement(transition, transitionProps, _react["default"].createElement(_styledComponents.ThemeProvider, {
         theme: customTheme
-      }, _react.default.createElement(_elements.Wrapper, {
+      }, _react["default"].createElement(_elements.Wrapper, {
         show: true
-      }, _react.default.cloneElement(children, {
+      }, _react["default"].cloneElement(children, {
         cancel: this.toggleKeyPad,
         confirm: this.confirm,
         saveClick: this.saveClick,
@@ -268,18 +268,18 @@ NumPad.defaultProps = {
   markers: []
 };
 NumPad.propTypes = {
-  onChange: _propTypes.default.func.isRequired,
-  saveClick: _propTypes.default.func.isRequired,
-  children: _propTypes.default.oneOfType([_propTypes.default.object, _propTypes.default.arrayOf(_propTypes.default.element)]),
-  customInput: _propTypes.default.element,
-  placeholder: _propTypes.default.string,
-  position: _propTypes.default.string,
-  label: _propTypes.default.string,
-  locale: _propTypes.default.string,
-  theme: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.object]),
-  markers: _propTypes.default.arrayOf(_propTypes.default.string),
-  value: _propTypes.default.oneOfType([_propTypes.default.number, _propTypes.default.string]),
-  sync: _propTypes.default.bool
+  onChange: _propTypes["default"].func.isRequired,
+  saveClick: _propTypes["default"].func.isRequired,
+  children: _propTypes["default"].oneOfType([_propTypes["default"].object, _propTypes["default"].arrayOf(_propTypes["default"].element)]),
+  customInput: _propTypes["default"].element,
+  placeholder: _propTypes["default"].string,
+  position: _propTypes["default"].string,
+  label: _propTypes["default"].string,
+  locale: _propTypes["default"].string,
+  theme: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].object]),
+  markers: _propTypes["default"].arrayOf(_propTypes["default"].string),
+  value: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string]),
+  sync: _propTypes["default"].bool
 };
 var _default = NumPad;
-exports.default = _default;
+exports["default"] = _default;

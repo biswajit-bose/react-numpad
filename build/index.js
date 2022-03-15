@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _SpecialNumpad = _interopRequireDefault(require("./components/SpecialNumpad"));
 
@@ -13,12 +13,12 @@ var _HalfDigitNumpad = _interopRequireDefault(require("./components/HalfDigitNum
 
 var _HalfSpecialNumpad = _interopRequireDefault(require("./components/HalfSpecialNumpad"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var _default = {
-  SpecialNumpad: _SpecialNumpad.default,
-  DigitNumpad: _DigitNumpad.default,
-  HalfDigitNumpad: _HalfDigitNumpad.default,
-  HalfSpecialNumpad: _HalfSpecialNumpad.default
+  SpecialNumpad: _SpecialNumpad["default"],
+  DigitNumpad: _DigitNumpad["default"],
+  HalfDigitNumpad: _HalfDigitNumpad["default"],
+  HalfSpecialNumpad: _HalfSpecialNumpad["default"]
 };
-exports.default = _default;
+exports["default"] = _default;
